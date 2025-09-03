@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url(/fonts/Poppins/Poppins-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url(/fonts/Poppins/Poppins-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url(/fonts/Poppins/Poppins-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins';
+  text-decoration: none;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: rgb(21, 33, 46);
+  overflow-x: hidden;
+  height: 500vh;
+}
+
+nav {
+  padding: 0 0; 
+  display: flex;
+  justify-self: center;
+  width: 100vw;
+  max-width: 1180px;
+  box-sizing: border-box;
+}
+
+.head-content {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(21, 33, 46);
+  z-index: 0;
+}
+
+/*CARASOLE*/
+
+#carasole-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  max-width: 1185px;
+  height: 345px;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.carasole-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none; 
+  cursor: pointer;
+  transition: transform 1s ease;
+}
+
+.carasole-slide-right {
+  transform: translateX(-100%);
+}
+
+.carasole-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(10px) brightness(50%);
+  /* pointer-events: none; */
+  z-index: -1;
+}
+
+.carasole-slide-info {
+  position: relative;
+  padding-left: 4rem;
+  width: 43%;
+  z-index: 1;
+}
+
+.carasole-total-chapter {
+  padding-bottom: 0.3rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.carasole-title {
+  padding-bottom: 0.8rem;
+  font-size: 25px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;   
+  text-overflow: ellipsis;  
+}
+
+.carasole-desc {
+  display: -webkit-box;        /* jadikan flex box untuk webkit */
+  -webkit-box-orient: vertical; /* arah vertikal */
+  -webkit-line-clamp: 3;       /* maksimal 3 baris */
+  line-clamp: 3;
+  font-size: 14px;
+  overflow: hidden;            /* sembunyikan sisa teks */
+  text-overflow: clip;
+}
+
+.carasole-genre-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 0.2rem;
+  overflow: hidden;
+}
+
+.carasole-genre {
+  padding: 0.1rem 0.5rem;
+  display: inline-block;
+  border: 2px solid rgb(201, 201, 201);
+  border-radius: 0.4rem;
+  font-size: 11px;
+  transition: all 0.1s ease-in;
+}
+
+.carasole-genre:hover {
+  border-color: white;
+  background-color: white;
+  color: black;
+}
+
+.carasole-start-btn {
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  width: fit-content;
+  border-radius: 0.3rem;
+  background-color: #ffd408;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.carasole-img {
+  margin: 0 auto;
+  width: 24.5rem;
+  rotate: 13deg;
+  transform: translateY(4.5rem) translateX(-2rem);
+}
+
+.carasole-btn-container {
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  z-index: 2;
+}
+
+.carasole-btn {
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.carasole-btn-active {
+  background-color: rgb(92, 146, 207);
+}
+
+/*CATEGORY*/
+
+#main-web-link {  
+  margin: 2rem auto;  
+  padding: 0.2rem 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 950px;
+  border-radius: 0.5rem;
+  background-color: white;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+#main-web-link h2 {
+  color: black;
+}
+
+#main-web-link a {
+  color: red;
+}
+
+.category {
+  padding: 0.5rem;
+  padding-left: 3.35rem;
+  padding-right: 2.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2.7rem;
+  border-radius: 5px;
+  background-color: rgb(92, 146, 207);
+  overflow: hidden;
+}
+
+.category-genre {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.category a {
+  color: rgb(21, 33, 46);
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.category a:hover {
+  color: white;
+}
+
+.category button {
+  padding: 5px 1.7rem;
+  margin-left: auto;
+  border: none;
+  border-radius: 5px;
+  background-color: #202322;
+  color: rgb(92, 146, 207);
+  font-size: 16px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.category button:hover {
+  color: white;
+}
+
+/*AKHIR DARI TOP CONTENT*/
+
+main {
+  padding: 0 1.2rem; 
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1185px;
+}
+
+#popular-tdy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+#popular-tdy-top-color {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  border-radius: 0.2rem 0.2rem 0 0;
+  background-color: rgb(92, 146, 207);
+}
+
+#popular-tdy-top-color h4 {
+  position: absolute;
+  left: 1.5%;
+  bottom: 0%;
+  padding: 0.3rem 1.2rem;
+  border-radius: 0.2rem 0.2rem 0 0;
+  background-color: #202322;
+  font-size: 15px;
+}
+
+#popular-tdy-btm-color {
+  padding: 0.3rem 0.8rem;
+  background-color: #202322;
+  width: 100%;  
+  height: 360px;
+  box-sizing: border-box;
+}
+
+#popular-tdy-slider {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+#popular-tdy-slider::-webkit-scrollbar {
+  height: 8px;   /* WAJIB utk scrollbar horizontal */
+}
+
+#popular-tdy-slider::-webkit-scrollbar-track {
+  background-color: #111111;
+  border-radius: 1px;
+}
+
+#popular-tdy-slider::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 1px;
+}
+
+.popular-tdy-slide {
+  width: clamp(120px, 20vw, 150px);
+  padding: 1.2rem;
+  padding-left: 0;
+  flex-shrink: 0; 
+}
+
+.tdy-slide-img {
+  position: relative;
+  width: 100%;  
+  aspect-ratio: 5 / 7;
+  flex-shrink: 0;
+}
+
+.tdy-slide-img img:not(.tdy-slide-flag) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tdy-slide-flag {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  width: 26px;
+  height: 18px;
+}
+
+.colored {
+  position: absolute;
+  left: 4%;
+  bottom: 4%;
+  padding: 2px 5px;
+  border-radius: 0.2rem;
+  background-color: #ffd408;
+  color: #202322;
+  font-size: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.colored * {
+  color: #202322;
+  font-size: 11px;
+}
+
+.hot {
+  position: absolute;
+  right: 6%;
+  bottom: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.hot::before {
+  font-family: "Font Awesome 6 Free"; /* font-family dari FA */
+  font-weight: 900; /* 900 untuk solid, 400 untuk regular */
+  content: "\f06d"; /* unicode dari fa-fire-flame-curved */
+  padding: 7px;
+  font-size: 15px;
+}
+
+.tdy-slide-title {
+  padding-top: 0.5rem;
+  display: -webkit-box;          /* penting biar bisa multi-line */
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;  /* orientasi vertikal */
+  -webkit-line-clamp: 2;         /* maksimal 2 baris */
+  line-clamp: 2;
+  transition: color 0.2s ease;
+  overflow: hidden;
+}
+
+.tdy-slide-title-active {
+  color: rgb(92, 146, 207);
+}
+
+.tdy-slide-total-chapter {
+  color: rgb(195, 195, 195);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 13px;
+}
+
+.tdy-slide-rating {
+  display: flex;
+  text-align: center;
+  color: rgb(166, 166, 166);
+  font-size: 11px;
+}
+
+.tdy-slide-rating img {
+  padding-right: 5px;
+  height: 15px;
+}
+
+.tdy-slide-rating p {
+  color: rgb(166, 166, 166);
+  font-size: 11px;
+}
+
+#body-wrap {
+  margin-top: 1rem;
+  padding: 0 1.2rem; 
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1185px;
+}
+
+#project-up {
+  display: flex;
+  flex-direction: column;
+  width: clamp(360px, 100% , 830px);
+  background-color: #202322;
+}
+
+#project-up-head {
+  position: relative;
+  padding: 0.5rem 1.2rem; 
+  display: flex;
+  width: 100%;
+  background-color: #202322;
+  font-size: 16px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+#project-up-head::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  background-color: rgb(50, 41, 54);
+  width: 100%;
+  height: 1px;
+}
+
+#project-up-head a {
+  margin-left: auto;
+  padding: 2px 6px;
+  align-self: center;
+  background-color: rgb(92, 146, 207);
+  font-size: 9px;
+}
+
+/*PROJECT UPDATE CONTENT*/
+
+#project-up-body {
+  padding: 1rem 1.2rem;
+  padding-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-up-link {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.project-up-slide {
+  position: relative;
+  flex: 1 1 130px;
+  max-width: 140px; /*FIX SIZINGNYA YA*/
+}
+
+.project-up-img {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;  
+  aspect-ratio: 5 / 7;
+}
+
+.project-up-img img:not(.project-up-flag) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.project-up-flag {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  width: 26px;
+  height: 18px;
+}
+
+.project-up-title {
+  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;          
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 1;         
+  line-clamp: 1;
+  transition: color 0.2s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-up-title:hover {
+  color: rgb(92, 146, 207);
+}
+
+.project-up-ch {
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 11px;
+}
+
+.project-up-ch a {
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  background-color: #33293e;
+  color: #78619a;
+  font-weight: 600;
+}
+
+.project-up-ch a:hover {
+  background-color: rgb(121, 44, 204);
+  color: #ececec;
+}
+
+.project-up-time {
+  margin-left: 0.5rem;
+  color: rgb(166, 166, 166);
+  font-family: "Fira sans", sans-serif;
+  font-weight: 500;
+}

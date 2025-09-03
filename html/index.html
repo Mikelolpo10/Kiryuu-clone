@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="icon" href="https://www.nesabamedia.com/apps/wp-content/uploads/2024/01/kiryuu.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Kiryuu ID - Baca Manga Komik Bahasa Indonesia</title>
+  </head>
+  <body>
+    <header>
+      <!--nanti pake div buat wrap terus pake flex buat center jgn padding-->
+      <div id="header-wrap">
+        <div id="header-img-container">
+          <img
+            id="header-img"
+            src="https://kiryuu02.com/wp-content/uploads/2021/05/logo-kiryuu-219671-d1yvN4qK.png"
+            alt="logo"
+          />
+        </div>
+        <ul id="header-main-link">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="manga-list.html">Manga List</a></li>
+          <li><a href="bookmark.html">Bookmark</a></li>
+          <li><a href="join-us.html">Join Us</a></li>
+          <li><a href="premium.html">Premium</a></li>
+          <li><a href="apps.html">Apps</a></li>
+          <li><a href="daftar.html">Daftar/Masuk</a></li>
+        </ul>
+        <div id="header-right">
+          <button class="dark-mode">>>O</button>
+          <button class="notification-button" title="bell">
+            <i class="fa-solid fa-bell notification-bell"></i>
+          </button>
+          <input
+            id="search-bar"
+            type="search"
+            name="search-bar"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+    </header>
+    <nav>
+      <div class="head-content">
+        <div id="carasole-container">
+          <div class="carasole-btn-container">
+            <span
+              class="carasole-btn carasole-btn-active"
+              data-index="0"
+            ></span>
+            <span class="carasole-btn" data-index="1"></span>
+            <span class="carasole-btn" data-index="2"></span>
+            <span class="carasole-btn" data-index="3"></span>
+            <span class="carasole-btn" data-index="4"></span>
+            <span class="carasole-btn" data-index="5"></span>
+          </div>
+        </div>
+        <div class="category">
+          <div class="category-genre">
+            <a href="#">4-Koma</a>
+            <a href="#">Action</a>
+            <a href="#">Adaptation</a>
+            <a href="#">Adult</a>
+            <a href="#">Adventure</a>
+            <a href="#">Animals</a>
+            <a href="#">Anthology</a>
+            <a href="#">Antihero</a>
+          </div>
+          <button>All Manga</button>
+        </div>
+        <div id="main-web-link">
+          <h2>
+            Simpan website utama kami di [<a href="https://kiryuu.io/"
+              >KIRYUU.IO</a
+            >]
+          </h2>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="popular-tdy"> <!--nanti nama ganti jangan jelek-->
+        <div id="popular-tdy-top-color"><h4>Popular Today</h4></div>
+        <div id="popular-tdy-btm-color">
+          <div id="popular-tdy-slider">
+          </div>
+        </div>
+      </section>
+      <div id="body-wrap">
+        <div id="project-up">
+          <div id="project-up-head">
+            Project Update
+            <a href="#">VIEW ALL</a>
+          </div>
+
+          <div id="project-up-body">
+            <div class="project-up-slide">
+              <div class="project-up-img">
+                <a class="project-up-link" href="#" title="slide"></a>
+                <img src="https://kiryuu02.com/wp-content/uploads/2024/11/evolution-begins-with-a-big-tree-004006-0dgMZckc-206x300.jpg" alt="smyh">
+                <img class="project-up-flag" src="https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manhua.png" alt="china-flag">
+                <span class="hot"></span>
+              </div>
+              <a class="project-up-title" href="#">Evolution Begins With A Big Tree</a>
+              <div class="project-up-ch">
+                <a href="#">Ch. 76</a> 
+                <p class="project-up-time">10 jam</p>
+              </div>
+              <div class="project-up-ch"> <!--ganti nama class-->
+                <a href="#">Ch. 76</a> 
+                <p class="project-up-time">10 jam</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/303c5d1757.js" crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/carasole.js"></script>
+  </body>
+</html>
+
+<!-- Lazy load gambar:
+Untuk banyak gambar, tambahkan loading="lazy" agar halaman lebih ringan: -->
