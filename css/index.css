@@ -204,7 +204,7 @@ nav {
   max-width: 950px;
   border-radius: 0.5rem;
   background-color: white;
-  font-size: 15px;
+  font-size: 0.9rem;
   font-weight: 900;
 }
 
@@ -446,36 +446,19 @@ main {
   padding: 0 1.2rem; 
   display: flex;
   justify-content: flex-start;
+  gap: 1rem;
   width: 100%;
   max-width: 1185px;
 }
+
+/*PROJECT UPDATE*/
 
 #project-up {
   display: flex;
   flex-direction: column;
   width: clamp(360px, 100% , 830px);
+  border-radius: 0.2rem;
   background-color: #202322;
-}
-
-#project-up-head {
-  position: relative;
-  padding: 0.5rem 1.2rem; 
-  display: flex;
-  width: 100%;
-  background-color: #202322;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-#project-up-head::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  background-color: rgb(50, 41, 54);
-  width: 100%;
-  height: 1px;
 }
 
 #project-up-head a {
@@ -484,9 +467,8 @@ main {
   align-self: center;
   background-color: rgb(92, 146, 207);
   font-size: 9px;
+  font-weight: 500;
 }
-
-/*PROJECT UPDATE CONTENT*/
 
 #project-up-body {
   padding: 1rem 1.2rem;
@@ -499,18 +481,18 @@ main {
   box-sizing: border-box;
 }
 
+.project-up-slide {
+  position: relative;
+  flex: 1 1 130px;
+  max-width: 140px; /*FIX SIZINGNYA YA*/
+}
+
 .project-up-link {
   position: absolute;
   display: inline-block;
   width: 100%;
   height: 100%;
   z-index: 1;
-}
-
-.project-up-slide {
-  position: relative;
-  flex: 1 1 130px;
-  max-width: 140px; /*FIX SIZINGNYA YA*/
 }
 
 .project-up-img {
@@ -569,6 +551,7 @@ main {
   background-color: #33293e;
   color: #78619a;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .project-up-ch a:hover {
@@ -582,3 +565,32 @@ main {
   font-family: "Fira sans", sans-serif;
   font-weight: 500;
 }
+
+
+/*BODY SIDEBAR*/
+
+#body-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: clamp(200px, 30%, 400px);
+}
+
+/*TERAKHIR BACA*/
+
+#last-readed {
+  width: 100%;
+  height: fit-content;
+}
+
+#last-readed-body {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  border-radius: 0 0 0.2rem 0.2rem;
+  background-color: #202322;
+  box-sizing: border-box;
+}
+
+/*POPULAR SERIES*/
+
