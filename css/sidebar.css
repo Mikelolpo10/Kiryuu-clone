@@ -1,0 +1,391 @@
+/*BODY SIDEBAR*/
+
+#body-sidebar {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  max-width: 340px;
+  /* width: clamp(200px, 30%, 340px); */
+}
+
+/*TERAKHIR BACA*/
+
+#last-readed {
+  width: 100%;
+  height: fit-content;
+}
+
+#last-readed-body {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  border-radius: 0 0 0.2rem 0.2rem;
+  background-color: #202322;
+  box-sizing: border-box;
+}
+
+/*POPULAR SERIES*/
+#popular-series-body {
+  padding: 0.7rem 1rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 0 0 0.2rem 0.2rem;
+  background-color: #202322;
+  box-sizing: border-box;
+}
+
+#time-selection-container {
+  margin-bottom: 1rem;
+  padding: 6px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 2.3rem;
+  border-radius: 0.2rem;
+  background-color: #333333;
+  box-sizing: border-box;
+}
+
+.time-selection {
+  flex: 1 1 0;
+  text-align: center;
+  border-radius: 0.2rem;
+  color: rgb(166, 166, 166);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6rem;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.time-selection-active {
+  background-color: rgb(92, 146, 207);
+  color: white;
+}
+
+.sidebar-series-ul li{ /*coba pake paddingnya di li bukan parentnya*/
+  position: relative;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar-series-ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  background-color: rgb(50, 41, 54);
+  width: 100%;
+  height: 1px;
+}
+
+.popular-series-rank {
+  margin-right: 12px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgb(166, 166, 166);
+  border-radius: 0.2rem;
+  color: rgb(166, 166, 166);
+  font-size: 13px;
+  transform: translateY(100%);
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+}
+
+.sidebar-series-img {
+  padding-right: 10px;
+  width: 57px;
+  height: 75px;
+  border-radius: 0.2rem;
+}
+
+.sidebar-series-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+}
+
+.sidebar-series-title {
+  display: -webkit-box;              
+  -webkit-box-orient: vertical;      
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  font-size: 0.85rem;
+  font-weight: 600;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.sidebar-series-genre { /*benerin line clampnya*/
+  padding-top: 0.5rem;
+  color: rgb(166, 166, 166);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.sidebar-series-genre a {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.sidebar-series-rating {
+  padding-top: 0.5rem;
+  color: rgb(166, 166, 166);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.sidebar-series-rating img {
+  width: 35%;
+}
+
+#discord-container {
+  position: relative;
+  padding: 0.5rem 1.2rem; 
+  display: flex;
+  background-color: #202322;
+}
+
+#discord-container h1{
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: #7188d8;
+  font-size: 2.5rem;
+  font-family: "Fira sans", sans-serif;
+}
+
+
+#discord-container div {
+  position: absolute;
+  top: 50%;
+  left: 27.5%;
+  width: 1.7rem;
+  height: 1.7rem;
+  background-color: black;
+  transform: translateY(-50%) rotate(45deg);
+  aspect-ratio: 1 / 1;
+  z-index: 1;
+}
+
+#discord-logo {
+  padding: 0.8rem;
+  width: 65px;
+  border-radius: 0.5rem 0 0  0.5rem;
+  background-color: black;
+  aspect-ratio: 1 / 1;
+  z-index: 2;
+}
+
+/*message*/
+#message-sidebar {
+  padding: 0.3rem 1rem 1.3rem 1rem;
+  height: 450px;
+  border-radius: 0.2rem;
+  background-color: #202322;
+}
+
+#message-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: rgb(227, 44, 44);
+}
+
+#message-list {
+  height: 80%;
+  background-color: #eaeaea;
+  overflow-y: scroll;
+}
+
+.message {
+  position: relative;
+  margin: 5px;
+  display: flex;
+  list-style: none;
+  height: fit-content;
+  background-color: #ffffff;
+}
+
+.message-profile {
+  margin: 3px;
+  width: 35px;
+  height: 35px;
+  aspect-ratio: 1 / 1;
+}
+
+.message-profile img {
+  width: 100%;
+  height: 100%;
+}
+
+.message-content {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+} /*pake if buat nambahin text indent*/
+
+.message-content h5 {
+  color: rgb(114, 114, 114);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.message-time {
+  position: absolute;
+  right: 1%;
+  color: rgb(114, 114, 114);
+  font-size: 11px;
+}
+
+.message-content p:not(.message-time) {
+  color: black;
+  font-size: 13px
+}
+
+#msg-option {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 32px;
+  background-color: rgb(93, 147, 255);
+}
+
+#profile {
+  margin-right: 7rem;
+  display: flex;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+}
+
+#profile i {
+  font-size: 13px;
+}
+
+#user-online {
+  margin-right: 0.5rem;
+  font-size: 13px;
+}
+
+.user-online-btn {
+  margin-right: 1.8rem;
+  font-size: 17px;
+}
+
+.popup-btn {
+  font-size: 14px;
+}
+
+/*message input*/
+#msg-input {
+  position: relative;
+  padding: 0 1rem;
+  display: flex;
+  height: 13%;
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+#msg-input::before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(93, 147, 255);
+}
+
+#your-profile {
+  margin-top: 5px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: yellowgreen;
+  transform: translateX(-20%);
+}
+
+#emoji {
+  color: black;
+}
+
+#msg-input-center {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80%;
+}
+
+#msg-input-center input {
+  width: 100%;
+  border: none;
+  color: black;
+}
+
+#msg-input-center input:focus {
+  outline: none;
+}
+
+#msg-input-right {
+  position: relative;
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  width: auto;
+}
+
+#login {
+  color: rgb(166, 166, 166);
+  transform: translateY(-80%);
+}
+
+#post-msg {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid rgb(166, 166, 166);
+  right: 20%;
+  transform: translate(0%, 100%);
+}
+
+#new-series-list {
+  padding: 0.2rem 1rem;
+  padding-bottom: 0;
+  background-color: #202322;
+}
+
+#new-series-list li { /*li yang terakhir jangan ada garis dari before*/
+  margin-bottom: 0rem;
+  padding-bottom: 1.5rem;
+}
+
+.new-series-year {
+  padding-top: 0.5rem;
+  color: rgb(166, 166, 166);
+  font-size: 10px;
+}

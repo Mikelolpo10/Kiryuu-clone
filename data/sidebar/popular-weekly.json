@@ -4,6 +4,7 @@
     "type": "https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manga.png",
     "url": "https://kiryuu02.com/manga/evolution-begins-with-a-big-tree/",
     "title": "Evolution Begins With A Big Tree",
+    "genres": ["Action", "Drama", "Fantasy", "Shounen", "Supernatural"],
     "rating": 8.3,
     "color": "color"
   },
@@ -12,6 +13,7 @@
     "type": "https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manga.png",
     "url": "https://kiryuu02.com/manga/magic-emperor/",
     "title": "Magic Emperor",
+    "genres": ["Action", "Adventure", "Fantasy", "Shounen", "Supernatural"],
     "rating": 8.4,
     "color": "color"
   },
@@ -20,6 +22,7 @@
     "type": "https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manga.png",
     "url": "https://kiryuu02.com/manga/mercenary-enrollment/",
     "title": "Mercenary Enrollment",
+    "genres": ["Action", "Drama", "Romance", "School Life", "Sci-fi"],
     "rating": 9,
     "color": "color"
   },
@@ -28,6 +31,7 @@
     "type": "https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manga.png",
     "url": "https://kiryuu02.com/manga/the-worlds-best-engineer/",
     "title": "The World’s Best Engineer",
+    "genres": ["Action", "Fantasy", "Reincarnation"],
     "rating": 7,
     "color": "color"
   },
@@ -36,6 +40,7 @@
     "type": "https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manga.png",
     "url": "https://kiryuu02.com/manga/martial-peak/",
     "title": "Martial Peak",
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Harem", "Historical", "Martial Arts"],
     "rating": 7.6,
     "color": "color"
   }

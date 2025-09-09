@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/utils.css">
     <link rel="icon" href="https://www.nesabamedia.com/apps/wp-content/uploads/2024/01/kiryuu.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,61 +77,196 @@
         </div>
         <div id="main-web-link">
           <h2>
-            Simpan website utama kami di [<a href="https://kiryuu.io/"
-              >KIRYUU.IO</a
-            >]
+            Simpan website utama kami di [<a href="https://kiryuu.io/">KIRYUU.IO</a>]
           </h2>
         </div>
       </div>
     </nav>
 
-    <main>
-      <section id="popular-tdy"> <!--nanti nama ganti jangan jelek-->
-        <div id="popular-tdy-top-color"><h4>Popular Today</h4></div>
-        <div id="popular-tdy-btm-color">
-          <div id="popular-tdy-slider">
+      <main>
+        <section id="popular-tdy"> <!--nanti nama ganti jangan jelek-->
+          <div id="popular-tdy-top-color"><h4>Popular Today</h4></div>
+          <div id="popular-tdy-btm-color">
+            <div id="popular-tdy-slider"></div>
           </div>
+        </section>
+        <div id="wrap">
+          <div id="body-wrap">
+            <div id="project-up">
+              <div id="project-up-head" class="body-title">
+                Project Update
+                <a class="view-all" href="#">VIEW ALL</a>
+              </div>
+              <div id="project-up-body"></div>
+            </div>
+            <section id="latest-update">
+              <div id="latest-update-head" class="body-title">
+                Latest Update
+                <a class="view-all" href="#">VIEW ALL</a>
+              </div>
+              <div id="latest-up-body"> <!--nanti setiap baris masukin div tersendiri supaya bisa kasih garis-->
+                <div class="latest-up-slide">
+                  <div class="latest-up-img">
+                    <a class="latest-up-link" href="${data.url}" title="slide"></a>
+                    <img src="https://kiryuu02.com/wp-content/uploads/2025/08/nice-prison-104928-Xdi7zAXV-200x300.jpg" alt="smyh">
+                  </div>
+                  <div class="latest-up-detail">
+                    <a class="latest-up-title" href="#">Nice Prison</a>
+                    <ul>
+                      <li class="latest-up-ch">
+                        <a href="${data.latest.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="latest-up-slide">
+                  <div class="latest-up-img">
+                    <a class="latest-up-link" href="${data.url}" title="slide"></a>
+                    <img src="https://kiryuu02.com/wp-content/uploads/2025/08/nice-prison-104928-Xdi7zAXV-200x300.jpg" alt="smyh">
+                  </div>
+                  <div class="latest-up-detail">
+                    <a class="latest-up-title" href="#">Nice Prison</a>
+                    <ul>
+                      <li class="latest-up-ch">
+                        <a href="${data.latest.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="latest-up-slide">
+                  <div class="latest-up-img">
+                    <a class="latest-up-link" href="${data.url}" title="slide"></a>
+                    <img src="https://kiryuu02.com/wp-content/uploads/2025/08/nice-prison-104928-Xdi7zAXV-200x300.jpg" alt="smyh">
+                  </div>
+                  <div class="latest-up-detail">
+                    <a class="latest-up-title" href="#">Nice Prison</a>
+                    <ul>
+                      <li class="latest-up-ch">
+                        <a href="${data.latest.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="latest-up-slide">
+                  <div class="latest-up-img">
+                    <a class="latest-up-link" href="${data.url}" title="slide"></a>
+                    <img src="https://kiryuu02.com/wp-content/uploads/2025/08/nice-prison-104928-Xdi7zAXV-200x300.jpg" alt="smyh">
+                  </div>
+                  <div class="latest-up-detail">
+                    <a class="latest-up-title" href="#">Nice Prison</a>
+                    <ul>
+                      <li class="latest-up-ch">
+                        <a href="${data.latest.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                      <li class="latest-up-ch">
+                        <a href="${data.previous.url}">Ch. 210</a> 
+                        <p class="latest-up-time">3 minggu ago</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <aside id="body-sidebar"> 
+            <section id="last-readed">
+              <h2 class="body-title">Terakhir Dibaca</h2>
+              <div id="last-readed-body"></div>
+            </section>
+            <section id="popular-series">
+              <h2 class="body-title">Serial Populer</h2>
+              <div id="popular-series-body">
+                <div id="time-selection-container">
+                  <div class="time-selection time-selection-active">Weekly</div>
+                  <div class="time-selection">Monthly</div>
+                  <div class="time-selection">All</div>
+                </div>
+                <ul id="popular-series-list" class="sidebar-series-ul"></ul>
+              </div>
+            </section>
+            <section id="join-discord">
+              <h2 class="body-title">Join Discord</h2>
+              <div id="discord-container">
+                <img id="discord-logo" src="/logo/icons8-discord-480.png" alt="discord-logo">
+                <div></div>
+                <h1>Discord</h1>
+              </div>
+            </section>
+            <section id="message-sidebar">
+              <div id="message-container">
+                <ul id="message-list">
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi mina wjojpa oajarpo paopwfpao apwokapofp lore</p></div></li> <!--nanti img tambahin di js-->
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>kopi americano</p></div></li>
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>ayam bakar</p></div></li>
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>mabar mobile legend</p></div></li>
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi min</p></div></li>
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>tolong up manga</p></div></li>
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi mawihih awawaa a awaw in</p></div></li>
+                  <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi mawihih awawaa a awaw in</p></div></li>
+                </ul>
+                <div id="msg-option">
+                  <div id="profile">
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  <p id="user-online">1905</p>
+                  <i class="fa-solid fa-users-line user-online-btn"></i>
+                  <i class="fa-solid fa-arrow-up-right-from-square popup-btn"></i>
+                </div>
+                <div id="msg-input">
+                  <div id="msg-input-left">
+                    <span id="your-profile"><img src="" alt=""></span>
+                    <i id="emoji" class="fa-regular fa-face-smile"></i>
+                  </div>
+                  <div id="msg-input-center">
+                    <input id="your-name" type="text" placeholder="name">
+                    <input id="your-msg" type="text" placeholder="message">
+                  </div>
+                  <div id="msg-input-right">
+                    <i id="login" class="fa-solid fa-right-to-bracket"></i>
+                    <div id="post-msg"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="new-series">
+              <h1 class="body-title">Serial baru</h1>
+              <ul id="new-series-list" class="sidebar-series-ul"></ul>
+            </section>
+          </aside> <!--KALO UKURANNYA MOBILE TURUNIN ASIDE KE PALING BAWAH-->
         </div>
-      </section>
-      <div id="body-wrap">
-        <div id="project-up">
-          <div id="project-up-head" class="body-title">
-            Project Update
-            <a href="#">VIEW ALL</a>
-          </div>
-
-          <div id="project-up-body">
-            <!-- <div class="project-up-slide">
-              <div class="project-up-img">
-                <a class="project-up-link" href="#" title="slide"></a>
-                <img src="https://kiryuu02.com/wp-content/uploads/2024/11/evolution-begins-with-a-big-tree-004006-0dgMZckc-206x300.jpg" alt="smyh">
-                <img class="project-up-flag" src="https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manhua.png" alt="china-flag">
-                <span class="hot"></span>
-              </div>
-              <a class="project-up-title" href="#">Evolution Begins With A Big Tree</a>
-              <div class="project-up-ch">
-                <a href="#">Ch. 76</a> 
-                <p class="project-up-time">10 jam</p>
-              </div>
-              <div class="project-up-ch"> ganti nama class
-                <a href="#">Ch. 76</a> 
-                <p class="project-up-time">10 jam</p>
-              </div>
-            </div> -->
-          </div>
-        </div>
-        <aside id="body-sidebar">
-          <section id="last-readed">
-            <h2 class="body-title">Terakhir Dibaca</h2>
-            <div id="last-readed-body"></div>
-          </section>
-          <section id="popular-series">
-            <h2 class="body-title">Series Populer</h2>
-            <div id="popular-series-body"></div>
-          </section>
-        </aside>
-      </div>
-    </main>
+      </main>
 
     <script src="https://kit.fontawesome.com/303c5d1757.js" crossorigin="anonymous"></script>
     <script src="/js/index.js"></script>

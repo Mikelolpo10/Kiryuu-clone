@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 @font-face {
   font-family: 'Poppins';
   src: url(/fonts/Poppins/Poppins-Regular.ttf);
@@ -29,6 +28,8 @@
   text-decoration: none;
   color: white;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -441,14 +442,20 @@ main {
   font-size: 11px;
 }
 
-#body-wrap {
+#wrap {
   margin-top: 1rem;
-  padding: 0 1.2rem; 
   display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#body-wrap {
+  padding: 0 0;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  width: 100%;
-  max-width: 1185px;
+  width: clamp(360px, 100% , 830px);
 }
 
 /*PROJECT UPDATE*/
@@ -457,17 +464,9 @@ main {
   display: flex;
   flex-direction: column;
   width: clamp(360px, 100% , 830px);
+  height: fit-content;
   border-radius: 0.2rem;
   background-color: #202322;
-}
-
-#project-up-head a {
-  margin-left: auto;
-  padding: 2px 6px;
-  align-self: center;
-  background-color: rgb(92, 146, 207);
-  font-size: 9px;
-  font-weight: 500;
 }
 
 #project-up-body {
@@ -483,8 +482,8 @@ main {
 
 .project-up-slide {
   position: relative;
-  flex: 1 1 130px;
-  max-width: 140px; /*FIX SIZINGNYA YA*/
+  flex: 1 1 140px;
+  max-width: 150px; /*FIX SIZINGNYA YA*/
 }
 
 .project-up-link {
@@ -566,31 +565,86 @@ main {
   font-weight: 500;
 }
 
-
-/*BODY SIDEBAR*/
-
-#body-sidebar {
+/*latest update*/
+#latest-up-body {
+  padding: 1.5rem 0rem; 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1rem;
-  width: clamp(200px, 30%, 400px);
-}
-
-/*TERAKHIR BACA*/
-
-#last-readed {
+  flex-wrap: wrap;
+  gap: 10px;
   width: 100%;
-  height: fit-content;
-}
-
-#last-readed-body {
-  padding-bottom: 1.5rem;
-  width: 100%;
-  border-radius: 0 0 0.2rem 0.2rem;
   background-color: #202322;
   box-sizing: border-box;
 }
 
-/*POPULAR SERIES*/
+.latest-up-slide {
+  display: flex;
+  /* flex: 1 1 calc(33.333% - 10px); */
+  width: clamp(255px, calc(33.333% - 10px), 270px);
+}
 
+.latest-up-img {
+  position: relative;
+  flex: 0 1 75px;
+  height: fit-content;
+}
+
+.latest-up-img img {
+  width: 100%;
+  border-radius: 0.2rem;
+}
+
+.latest-up-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.latest-up-detail {
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 0;
+}
+
+.latest-up-title {
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.latest-up-ch {
+  position: relative;
+  padding-bottom: 0.4rem;
+  padding-left: 1.3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: disc;
+}
+
+.latest-up-ch::before {
+  content: "";
+  position: absolute;
+  left: 3%;
+  width: 4px;
+  border-radius: 50%;
+  background-color: rgb(92, 146, 207);
+  aspect-ratio: 1 / 1;
+}
+
+.latest-up-ch a {
+  font-size: 13px;
+}
+
+.latest-up-time {
+  margin-left: auto;
+  color: rgb(166, 166, 166);
+  font-size: 11px;
+}
+
+@media (max-width: 460px) {
+  #body-sidebar {
+    display: none;
+  }
+}
