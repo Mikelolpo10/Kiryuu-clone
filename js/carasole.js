@@ -1,4 +1,4 @@
-let carasoleData;
+let carasoleData; //NANTI REFACTOR YA DEK
 
 function renderCarasole() {
   let html = ``;
@@ -39,7 +39,7 @@ function renderCarasole() {
 
 async function getData() {
   try {
-    let res = await fetch("/data/carasole-data.json");
+    let res = await fetch("/data/head/carasole-data.json");
     carasoleData = await res.json();
     console.table(carasoleData);
     renderCarasole();

@@ -1,4 +1,4 @@
-function renderSlide (data) {
+function renderPopularTdy (data) {
     let colored = ``;
     let roundedRating = 0;
 
@@ -75,19 +75,49 @@ function renderLatestUpdate (data) {
         <p class="project-up-time">${data.previous.time}</p>
       </div>
     </div>`;
+  }
+
+function renderLatestUpdate(data) {
+  const {title, img, url, latest} = data;
+  return `
+    <div class="latest-up-slide">
+      <div class="latest-up-img">
+        <a class="latest-up-link" href="${url}"></a>
+        <img src="${img}" alt="${title}">
+      </div>
+      <div class="latest-up-detail">
+        <a class="latest-up-title" href="#">${title}</a>
+        <ul>
+          <li class="latest-up-ch">
+            <a href="${latest[0].url}">${latest[0].ch}</a> 
+            <p class="latest-up-time">${latest[0].time}</p>
+          </li>
+          <li class="latest-up-ch">
+            <a href="${latest[1].url}">${latest[1].ch}</a> 
+            <p class="latest-up-time">${latest[1].time}</p>
+          </li>
+          <li class="latest-up-ch">
+            <a href="${latest[2].url}">${latest[2].ch}</a> 
+            <p class="latest-up-time">${latest[2].time}</p>
+          </li>
+        </ul>
+      </div>
+    </div>`
 }
 
+//sidebar
 function renderPopularSeries(data, i) { //nanti bikin href buat setiap genrenya
   const { img, url, title, genres, rating } = data
   const genreHtml = genres.map((g) => `<a href= "#">${g}</a>`).join(", ")
   let roundedRating = 0;
 
   if (rating % 1 !== 0 && Number.isInteger(rating * 2)) {
-    roundedRating = rating * 5;
+    roundedRating = Math.round(rating) * 5;
   } else {
     roundedRating = Math.round(rating * 5)
   }
-
+  
+  console.log(roundedRating)
   return `
     <li>
       <div class="popular-series-rank">
@@ -120,6 +150,8 @@ function renderNewSeries(data) {
     </li>`;
 }
 
+
+//factory function
 function renderList (data, template, targetId) {
   const html = data.map(template).join("")
   document.getElementById(targetId).innerHTML = html
@@ -137,9 +169,10 @@ async function fetchAndRender (url, template, targetId) {
 }
 
 
-fetchAndRender("/data/popular-today.json", renderSlide, "popular-tdy-slider")
+fetchAndRender("/data/head/popular-today.json", renderPopularTdy, "popular-tdy-slider")
 fetchAndRender("/data/body/project-update.json", renderProjectUpdate, "project-up-body")
-// fetchAndRender("/data/body/latest-update.json", renderLatestUpdate, "latest-update-body")
+fetchAndRender("/data/body/latest-update.json", renderLatestUpdate, "latest-update-body")
+fetchAndRender("/data/body/latest-update.json", renderLatestUpdate, "latest-up-body")
 
 
 //sidebar
