@@ -1,5 +1,4 @@
-function renderSlide (slideData) {
-  slideData.forEach((data) => {
+function renderSlide (data) {
     let colored = ``;
     let roundedRating = 0;
 
@@ -18,7 +17,7 @@ function renderSlide (slideData) {
       roundedRating = Math.round(data.rating) * 5;
     };
     
-    const html = `            
+    return `            
       <a class="popular-tdy-link" href="#" title="slide">
         <div class="popular-tdy-slide">
         <div class="tdy-slide-img">
@@ -35,191 +34,114 @@ function renderSlide (slideData) {
         </span>
         </div>
       </a>`
-    document.getElementById("popular-tdy-slider").innerHTML += html
-  })
 }
 
 //nanti coba buat timenya pake dayjs
-function renderProjectUpdate(projectData) {
-  projectData.forEach((data) => {
-    
-    let html = `
-<div class="project-up-slide">
-  <div class="project-up-img">
-    <a class="project-up-link" href="${data.url}" title="slide"></a>
-    <img src="${data.img}" alt="smyh">
-    <img class="project-up-flag" src="${data.type}" alt="china-flag">
-    <span class="hot"></span>
-  </div>
-  <a class="project-up-title" href="${data.url}">${data.title}</a>
-  <div class="project-up-ch">
-    <a href="${data.latest.url}">${data.latest.chapter}</a> 
-    <p class="project-up-time">${data.latest.time}</p>
-  </div>
-  <div class="project-up-ch">
-    <a href="${data.previous.url}">${data.previous.chapter}</a> 
-    <p class="project-up-time">${data.previous.time}</p>
-  </div>
-</div>`;
-    document.getElementById("project-up-body").innerHTML += html
-  })
+function renderProjectUpdate(data) {
+  return `
+    <div class="project-up-slide">
+      <div class="project-up-img">
+        <a class="project-up-link" href="${data.url}" title="slide"></a>
+        <img src="${data.img}" alt="smyh">
+        <img class="project-up-flag" src="${data.type}" alt="china-flag">
+        <span class="hot"></span>
+      </div>
+      <a class="project-up-title" href="${data.url}">${data.title}</a>
+      <div class="project-up-ch">
+        <a href="${data.latest.url}">${data.latest.chapter}</a> 
+        <p class="project-up-time">${data.latest.time}</p>
+      </div>
+      <div class="project-up-ch">
+        <a href="${data.previous.url}">${data.previous.chapter}</a> 
+        <p class="project-up-time">${data.previous.time}</p>
+      </div>
+    </div>`;
 }
 
-function renderLatestUpdate (projectData) {
-  projectData.forEach((data) => {
-    
-    let html = `
-<div class="project-up-slide">
-  <div class="project-up-img">
-    <a class="project-up-link" href="${data.url}" title="slide"></a>
-    <img src="${data.img}" alt="smyh">
-  </div>
-  <a class="project-up-title" href="${data.url}">${data.title}</a>
-  <div class="project-up-ch">
-    <a href="${data.latest.url}">${data.latest.chapter}</a> 
-    <p class="project-up-time">${data.latest.time}</p>
-  </div>
-  <div class="project-up-ch">
-    <a href="${data.previous.url}">${data.previous.chapter}</a> 
-    <p class="project-up-time">${data.previous.time}</p>
-  </div>
-</div>`;
-    document.getElementById("latest-update-body").innerHTML += html
-  })
+function renderLatestUpdate (data) {
+  return `
+    <div class="project-up-slide">
+      <div class="project-up-img">
+        <a class="project-up-link" href="${data.url}" title="slide"></a>
+        <img src="${data.img}" alt="smyh">
+      </div>
+      <a class="project-up-title" href="${data.url}">${data.title}</a>
+      <div class="project-up-ch">
+        <a href="${data.latest.url}">${data.latest.chapter}</a> 
+        <p class="project-up-time">${data.latest.time}</p>
+      </div>
+      <div class="project-up-ch">
+        <a href="${data.previous.url}">${data.previous.chapter}</a> 
+        <p class="project-up-time">${data.previous.time}</p>
+      </div>
+    </div>`;
 }
 
-function renderPopularSeries(projectData) {
-  let rank = 1;
-  projectData.forEach((data) => {
-    const { genres } = data;
-    let genreHtml = ``
+function renderPopularSeries(data, i) { //nanti bikin href buat setiap genrenya
+  const { img, url, title, genres, rating } = data
+  const genreHtml = genres.map((g) => `<a href= "#">${g}</a>`).join(", ")
+  let roundedRating = 0;
 
-    genres.forEach((genre) => {
-      genreHtml += `<a href="#">${genre}, </a>`
-    })
+  if (rating % 1 !== 0 && Number.isInteger(rating * 2)) {
+    roundedRating = rating * 5;
+  } else {
+    roundedRating = Math.round(rating * 5)
+  }
 
-    let html = `
-      <li>
-        <div class="popular-series-rank">
-          ${rank++}
+  return `
+    <li>
+      <div class="popular-series-rank">
+        ${i + 1}
+      </div>
+      <img class="sidebar-series-img" src="${img}" alt="${title}">
+      <div class="sidebar-series-content">
+        <a class="sidebar-series-title" href="${url}">${title}</a>
+        <span class="sidebar-series-genre">Genres: 
+          ${genreHtml}                    
+        </span>
+        <div class="sidebar-series-rating">
+          <img src="/ratings/rating-${roundedRating}.png" alt="">
+          ${rating}
         </div>
-        <img class="sidebar-series-img" src="${data.img}" alt="">
-        <div class="sidebar-series-content">
-          <a class="sidebar-series-title" href="${data.url}">${data.title}</a>
-          <span class="sidebar-series-genre">Genres: 
-            ${genreHtml}                    
-          </span>
-          <div class="sidebar-series-rating">
-            <img src="/ratings/rating-40.png" alt="">
-            8.3
-          </div>
-        </div>
-      </li>`
-    
-    document.getElementById("popular-series-list").innerHTML += html
-  })
+      </div>
+    </li>`
 }
 
-function renderNewSeries(projectData) {
-  projectData.forEach((data) => {
-    const { genres } = data;
-    let genreHtml = ``
-
-    genres.forEach((genre) => {
-      genreHtml += `<a href="#">${genre}, </a>`
-    })
-
-    let html = `
-      <li>
-        <img class="sidebar-series-img" src="${data.img}" alt="">
-        <div class="sidebar-series-content">
-          <a class="sidebar-series-title" href="${data.url}">${data.title}</a>
-          <span class="sidebar-series-genre">Genres: 
-            ${genreHtml}                    
-          </span>
-          <div class="new-series-year">
-            ${data.year}
-          </div>
-        </div>
-      </li>`
-    document.getElementById("new-series-list").innerHTML += html
-  })
+function renderNewSeries(data) {
+  const {img, url, title, genres, year} = data
+  const genreHtml = genres.map((g) => `<a href="#">${g}</a>`).join(", ");
+    return `<li>
+      <img class="sidebar-series-img" src="${img}" alt="${title}">
+      <div class="sidebar-series-content">
+        <a class="sidebar-series-title" href="${url}">${title}</a>
+        <span class="sidebar-series-genre">Genres: ${genreHtml}</span>
+        <div class="new-series-year">${year}</div>
+      </div>
+    </li>`;
 }
 
-async function getPopTdy() {
+function renderList (data, template, targetId) {
+  const html = data.map(template).join("")
+  document.getElementById(targetId).innerHTML = html
+}
+
+async function fetchAndRender (url, template, targetId) {
   try {
-    let res = await fetch("/data/popular-today.json")
-    let slideData = await res.json()
-    renderSlide(slideData)
-
-    document.querySelectorAll(".popular-tdy-link").forEach((item) => {
-      item.addEventListener("mouseover", () => {
-        item.querySelector(".tdy-slide-title").classList.add("tdy-slide-title-active")
-      })
-    })
-
-    document.querySelectorAll(".popular-tdy-link").forEach((item) => {
-      item.addEventListener("mouseout", () => {
-        item.querySelector(".tdy-slide-title").classList.remove("tdy-slide-title-active")
-      })
-    })
+    const res = await fetch(url)
+    const data = await res.json()
+    console.log(data)
+    renderList(data, template, targetId)
   } catch {
-    console.log(`ERROR SLIDER`)
+    console.log(`error ${targetId}`)
   }
 }
 
-async function getUpdate() {
-  try {
-    const res = await fetch("/data/body/project-update.json");
-    const projectData = await res.json();
-    renderProjectUpdate(projectData);
-  } catch {
-    console.log(`project update error`)
-  }
-}
 
-async function getLatestUpdate() {
-  try {
-    const res = await fetch("/data/body/latest-update.json");
-    const projectData = await res.json();
-    renderLatestUpdate(projectData)
-  } catch {
-    console.log(`latest update error`)
-  }
-}
+fetchAndRender("/data/popular-today.json", renderSlide, "popular-tdy-slider")
+fetchAndRender("/data/body/project-update.json", renderProjectUpdate, "project-up-body")
+// fetchAndRender("/data/body/latest-update.json", renderLatestUpdate, "latest-update-body")
+
 
 //sidebar
-async function getPopSeries() {
-  try {
-    const res = await fetch("/data/sidebar/popular-weekly.json");
-    const projectData = await res.json();
-    renderPopularSeries(projectData)
-  } catch {
-    console.log(`popular series error`)
-  }
-}
-
-async function newSeries() {
-  try {
-    const res = await fetch("/data/sidebar/serial-baru.json");
-    const projectData = await res.json();
-    renderNewSeries(projectData);
-  } catch {
-    console.log(`render new series error smtg`)
-  }
-}
-
-document.querySelectorAll(".time-selection").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".time-selection").forEach((btn) => {
-      btn.classList.remove("time-selection-active")
-    })
-    btn.classList.add("time-selection-active")
-  })
-})
-
-getPopTdy()
-getUpdate()
-getPopSeries()
-newSeries()
-// getLatestUpdate()
+fetchAndRender("/data/sidebar/popular-weekly.json", renderPopularSeries, "popular-series-list")
+fetchAndRender("/data/sidebar/serial-baru.json", renderNewSeries, "new-series-list")

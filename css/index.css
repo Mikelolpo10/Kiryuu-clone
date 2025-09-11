@@ -567,7 +567,7 @@ main {
 
 /*latest update*/
 #latest-up-body {
-  padding: 1.5rem 0rem; 
+  padding: 1.5rem 1.2rem; 
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -577,9 +577,22 @@ main {
 }
 
 .latest-up-slide {
+  position: relative;
+  margin-top: 0.3rem;
+  padding-bottom: 0.8rem;
   display: flex;
-  /* flex: 1 1 calc(33.333% - 10px); */
-  width: clamp(255px, calc(33.333% - 10px), 270px);
+  flex: 1 1 calc(33.333% - 10px);
+  max-width: calc(33.333% - 10px);
+}
+
+.latest-up-slide::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  background-color: rgb(50, 41, 54);
+  width: 105%;
+  height: 1px;
 }
 
 .latest-up-img {
@@ -590,7 +603,7 @@ main {
 
 .latest-up-img img {
   width: 100%;
-  border-radius: 0.2rem;
+  border-radius: 0.1rem;
 }
 
 .latest-up-link {
