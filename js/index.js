@@ -58,51 +58,37 @@ function renderProjectUpdate(data) {
     </div>`;
 }
 
-function renderLatestUpdate (data) {
-  return `
-    <div class="project-up-slide">
-      <div class="project-up-img">
-        <a class="project-up-link" href="${data.url}" title="slide"></a>
-        <img src="${data.img}" alt="smyh">
-      </div>
-      <a class="project-up-title" href="${data.url}">${data.title}</a>
-      <div class="project-up-ch">
-        <a href="${data.latest.url}">${data.latest.chapter}</a> 
-        <p class="project-up-time">${data.latest.time}</p>
-      </div>
-      <div class="project-up-ch">
-        <a href="${data.previous.url}">${data.previous.chapter}</a> 
-        <p class="project-up-time">${data.previous.time}</p>
-      </div>
-    </div>`;
-  }
-
 function renderLatestUpdate(data) {
-  const {title, img, url, latest} = data;
-  return `
+  let html = ``
+
+  data.forEach(d => {  
+    const {title, img, url, latest} = d;
+    html += `
     <div class="latest-up-slide">
-      <div class="latest-up-img">
+    <div class="latest-up-img">
         <a class="latest-up-link" href="${url}"></a>
         <img src="${img}" alt="${title}">
-      </div>
-      <div class="latest-up-detail">
+        </div>
+        <div class="latest-up-detail">
         <a class="latest-up-title" href="#">${title}</a>
         <ul>
-          <li class="latest-up-ch">
-            <a href="${latest[0].url}">${latest[0].ch}</a> 
-            <p class="latest-up-time">${latest[0].time}</p>
-          </li>
-          <li class="latest-up-ch">
-            <a href="${latest[1].url}">${latest[1].ch}</a> 
-            <p class="latest-up-time">${latest[1].time}</p>
-          </li>
-          <li class="latest-up-ch">
-            <a href="${latest[2].url}">${latest[2].ch}</a> 
-            <p class="latest-up-time">${latest[2].time}</p>
-          </li>
+        <li class="latest-up-ch">
+        <a href="${latest[0].url}">${latest[0].ch}</a> 
+        <p class="latest-up-time">${latest[0].time}</p>
+        </li>
+        <li class="latest-up-ch">
+        <a href="${latest[1].url}">${latest[1].ch}</a> 
+        <p class="latest-up-time">${latest[1].time}</p>
+        </li>
+        <li class="latest-up-ch">
+        <a href="${latest[2].url}">${latest[2].ch}</a> 
+        <p class="latest-up-time">${latest[2].time}</p>
+        </li>
         </ul>
-      </div>
-    </div>`
+        </div>
+        </div>`
+        });
+    document.getElementById("latest-up-next").insertAdjacentHTML("beforebegin", html)
 }
 
 //sidebar
@@ -117,7 +103,6 @@ function renderPopularSeries(data, i) { //nanti bikin href buat setiap genrenya
     roundedRating = Math.round(rating * 5)
   }
   
-  console.log(roundedRating)
   return `
     <li>
       <div class="popular-series-rank">
@@ -161,18 +146,25 @@ async function fetchAndRender (url, template, targetId) {
   try {
     const res = await fetch(url)
     const data = await res.json()
-    console.log(data)
     renderList(data, template, targetId)
   } catch {
     console.log(`error ${targetId}`)
   }
 }
 
+async function latestUpdate () {
+  try {
+    const res = await fetch("/data/body/latest-update.json")
+    const data = await res.json()
+    renderLatestUpdate(data)
+  } catch {
+    console.log(`error latest`)
+  }
+}
+latestUpdate()
 
 fetchAndRender("/data/head/popular-today.json", renderPopularTdy, "popular-tdy-slider")
 fetchAndRender("/data/body/project-update.json", renderProjectUpdate, "project-up-body")
-fetchAndRender("/data/body/latest-update.json", renderLatestUpdate, "latest-update-body")
-fetchAndRender("/data/body/latest-update.json", renderLatestUpdate, "latest-up-body")
 
 
 //sidebar

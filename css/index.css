@@ -394,19 +394,20 @@ main {
 }
 
 .hot::before {
-  font-family: "Font Awesome 6 Free"; /* font-family dari FA */
-  font-weight: 900; /* 900 untuk solid, 400 untuk regular */
-  content: "\f06d"; /* unicode dari fa-fire-flame-curved */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900; 
+  content: "\f06d"; 
   padding: 7px;
   font-size: 15px;
 }
 
-.tdy-slide-title {
+.tdy-slide-title { /*nanti atur ukuran font dan GANTI NAMA CLASS SUPAYA BISA JADI KOMPONEN*/
   padding-top: 0.5rem;
   display: -webkit-box;          /* penting biar bisa multi-line */
   width: 100%;
+  color: #dbdbdb;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.4;
   -webkit-box-orient: vertical;  /* orientasi vertikal */
   -webkit-line-clamp: 2;         /* maksimal 2 baris */
@@ -622,13 +623,21 @@ main {
 }
 
 .latest-up-title {
-  font-size: 14px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  display: -webkit-box;          
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 1;         
   line-clamp: 1;
-  text-overflow: ellipsis;
+  transition: color 0.2s ease;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.latest-up-title:hover {
+  color: rgb(92, 146, 207);
 }
 
 .latest-up-ch {
@@ -659,6 +668,54 @@ main {
   margin-left: auto;
   color: rgb(166, 166, 166);
   font-size: 11px;
+}
+
+#latest-up-next {
+  margin: 0.4rem auto;
+  padding: 0.3rem 0;
+  display: flex;
+  justify-content: center;
+  width: 6.7rem;
+  border-radius: 0.2rem;
+  background-color: rgb(92, 146, 207);
+  font-size: 14px;
+}
+
+#recom {
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #202322;
+}
+
+#recom-bdy {
+  padding: 1rem 1.2rem;
+}
+
+#recom-selection-container {
+  padding: 0.3rem 0.3rem;
+  display: flex;
+  width: 100%;
+  border-radius: 0.2rem;
+  background-color: #333333;
+  box-sizing: border-box;
+}
+
+#recom-selection-container a {
+  padding: 0.1rem 0;
+  font-size: 13px;
+}
+
+#recom-slide-selector {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.recom-slide {
+  flex: 1 1 0;
 }
 
 @media (max-width: 460px) {
