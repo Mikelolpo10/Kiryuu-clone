@@ -128,13 +128,16 @@
 
 .sidebar-series-genre { /*benerin line clampnya*/
   padding-top: 0.5rem;
+  display: -webkit-box;
   color: rgb(166, 166, 166);
   font-family: "Fira Sans", sans-serif;
   font-size: 12px;
   font-weight: 500;
+  -webkit-box-orient: vertical;      
   -webkit-line-clamp: 2;
   line-clamp: 2;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .sidebar-series-genre a {
@@ -322,7 +325,6 @@
   display: block;
   width: 25px;
   height: 25px;
-  background-color: yellowgreen;
   transform: translateX(-20%);
 }
 

@@ -36,7 +36,6 @@ function renderPopularTdy (data) {
       </a>`
 }
 
-//nanti coba buat timenya pake dayjs
 function renderProjectUpdate(data) {
   return `
     <div class="project-up-slide">
@@ -91,6 +90,31 @@ function renderLatestUpdate(data) {
     document.getElementById("latest-up-next").insertAdjacentHTML("beforebegin", html)
 }
 
+function renderBlog(data, i) {
+  const {title, img, url, desc, author, publishDate} = data;
+  
+  if (i >= 3) {
+    return
+  }
+  
+  return `
+    <article class="blog-box">
+      <div class="blog-img">
+        <a href="${url}" title="${title}"></a>
+        <img src="${img}" alt="${title}">
+      </div>
+      <a class="blog-title" href="#">${title}</a>
+      <p class="sidebar-series-genre">${desc}</p>
+      <span class="blog-meta sidebar-series-genre">
+        <i class="fa-regular fa-user"></i>
+        <i>${author}</i>
+        &centerdot;
+        <i class="fa-regular fa-clock"></i> 
+        ${publishDate}
+      </span>
+    </article>`
+}
+
 //sidebar
 function renderPopularSeries(data, i) { //nanti bikin href buat setiap genrenya
   const { img, url, title, genres, rating } = data
@@ -138,7 +162,7 @@ function renderNewSeries(data) {
 
 //factory function
 function renderList (data, template, targetId) {
-  const html = data.map(template).join("")
+  const html = data.map((item, i) => template(item, i)).join("")
   document.getElementById(targetId).innerHTML = html
 }
 
@@ -165,7 +189,7 @@ latestUpdate()
 
 fetchAndRender("/data/head/popular-today.json", renderPopularTdy, "popular-tdy-slider")
 fetchAndRender("/data/body/project-update.json", renderProjectUpdate, "project-up-body")
-
+fetchAndRender("/data/others/blog.json", renderBlog, "blog-body")
 
 //sidebar
 fetchAndRender("/data/sidebar/popular-weekly.json", renderPopularSeries, "popular-series-list")
