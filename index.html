@@ -1,8 +1,356 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=html/index.html">
-  </head>
-  <body>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/sidebar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/utils.css">
+  <link rel="icon" href="https://www.nesabamedia.com/apps/wp-content/uploads/2024/01/kiryuu.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Kiryuu ID - Baca Manga Komik Bahasa Indonesia</title>
+</head>
+<body>
+  <header>
+    <!--nanti pake div buat wrap terus pake flex buat center jgn padding-->
+    <div id="header-wrap">
+      <div id="header-img-container">
+        <img
+          id="header-img"
+          src="https://kiryuu02.com/wp-content/uploads/2021/05/logo-kiryuu-219671-d1yvN4qK.png"
+          alt="logo"
+        />
+      </div>
+      <ul id="header-main-link">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="manga-list.html">Manga List</a></li>
+        <li><a href="bookmark.html">Bookmark</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="premium.html">Premium</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="daftar.html">Daftar/Masuk</a></li>
+      </ul>
+      <div id="header-right">
+        <button class="dark-mode">>>O</button>
+        <button class="notification-button" title="bell">
+          <i class="fa-solid fa-bell notification-bell"></i>
+        </button>
+        <input
+          id="search-bar"
+          type="search"
+          name="search-bar"
+          placeholder="Search"
+        />
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="head-content">
+      <div id="carasole-container">
+        <div class="carasole-btn-container">
+          <span
+            class="carasole-btn carasole-btn-active"
+            data-index="0"
+          ></span>
+          <span class="carasole-btn" data-index="1"></span>
+          <span class="carasole-btn" data-index="2"></span>
+          <span class="carasole-btn" data-index="3"></span>
+          <span class="carasole-btn" data-index="4"></span>
+          <span class="carasole-btn" data-index="5"></span>
+        </div>
+      </div>
+      <div class="category">
+        <div class="category-genre">
+          <a href="#">4-Koma</a>
+          <a href="#">Action</a>
+          <a href="#">Adaptation</a>
+          <a href="#">Adult</a>
+          <a href="#">Adventure</a>
+          <a href="#">Animals</a>
+          <a href="#">Anthology</a>
+          <a href="#">Antihero</a>
+        </div>
+        <button>All Manga</button>
+      </div>
+      <div id="main-web-link">
+        <h2>
+          Simpan website utama kami di [<a href="https://kiryuu.io/">KIRYUU.IO</a>]
+        </h2>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="popular-tdy"> <!--nanti nama ganti jangan jelek-->
+      <div id="popular-tdy-top-color"><h4>Popular Today</h4></div>
+      <div id="popular-tdy-btm-color">
+        <div id="popular-tdy-slider"></div>
+      </div>
+    </section>
+    <div id="wrap">
+      <div id="body-wrap">
+        <div id="project-up">
+          <div id="project-up-head" class="body-title">
+            Project Update
+            <a class="view-all" href="#">VIEW ALL</a>
+          </div>
+          <div id="project-up-body"></div>
+        </div>
+        <section id="latest-update">
+          <div id="latest-update-head" class="body-title">
+            Latest Update
+            <a class="view-all" href="#">VIEW ALL</a>
+          </div>
+          <div id="latest-up-body">
+            <a id="latest-up-next" href="#">Next</a>
+          </div>
+        </section>
+        <section id="recom">
+          <div class="body-title">
+            Recommendation
+          </div>
+          <div id="recom-bdy">
+            <div id="recom-selection-container">
+              <div href="#" class="recom-select recom-select-active">Crossdressing</div>
+              <div href="#" class="recom-select">Manhwa</div>
+              <div href="#" class="recom-select">Non-human</div>
+              <div href="#" class="recom-select">Time Travel</div>
+              <div href="#" class="recom-select">Video Games</div>
+            </div>
+            <div id="recom-slide-selector">
+              <div class="recom-slide">
+                <a class="popular-tdy-link" href="#" title="slide"></a>
+                <div class="tdy-slide-img">
+                  <img src="https://kiryuu02.com/wp-content/uploads/2024/11/evolution-begins-with-a-big-tree-004006-0dgMZckc-206x300.jpg" alt="smyh">
+                  <img class="tdy-slide-flag" src="https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manhua.png" alt="china-flag">
+                  <span class="colored">
+                    <i class="fa-solid fa-palette"></i>
+                    COLOR
+                  </span>
+                </div>
+                <span href="${data.url}" class="tdy-slide-title">
+                  Inaho-kun wa Nise Kanojo no Hazu na no ni</span>
+                <p class="tdy-slide-total-chapter">Chapter 4</p> <!--ganti name class jadi latest ch-->
+                <span class="tdy-slide-rating">
+                  <img src="/ratings/rating-45.png" alt="${data.rating}">
+                  7
+                </span>
+              </div>
+              <div class="recom-slide">
+                <a class="popular-tdy-link" href="#" title="slide"></a>
+                <div class="tdy-slide-img">
+                  <img src="https://kiryuu02.com/wp-content/uploads/2024/11/evolution-begins-with-a-big-tree-004006-0dgMZckc-206x300.jpg" alt="smyh">
+                  <img class="tdy-slide-flag" src="https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manhua.png" alt="china-flag">
+                  <span class="colored">
+                    <i class="fa-solid fa-palette"></i>
+                    COLOR
+                  </span>
+                </div>
+                <span href="${data.url}" class="tdy-slide-title">
+                  Inaho-kun wa Nise Kanojo no Hazu na no ni</span>
+                <p class="tdy-slide-total-chapter">Chapter 4</p> <!--ganti name class jadi latest ch-->
+                <span class="tdy-slide-rating">
+                  <img src="/ratings/rating-45.png" alt="${data.rating}">
+                  7
+                </span>
+              </div>
+              <div class="recom-slide">
+                <a class="popular-tdy-link" href="#" title="slide"></a>
+                <div class="tdy-slide-img">
+                  <img src="https://kiryuu02.com/wp-content/uploads/2024/11/evolution-begins-with-a-big-tree-004006-0dgMZckc-206x300.jpg" alt="smyh">
+                  <img class="tdy-slide-flag" src="https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manhua.png" alt="china-flag">
+                  <span class="colored">
+                    <i class="fa-solid fa-palette"></i>
+                    COLOR
+                  </span>
+                </div>
+                <span href="${data.url}" class="tdy-slide-title">
+                  Inaho-kun wa Nise Kanojo no Hazu na no ni</span>
+                <p class="tdy-slide-total-chapter">Chapter 4</p> <!--ganti name class jadi latest ch-->
+                <span class="tdy-slide-rating">
+                  <img src="/ratings/rating-45.png" alt="${data.rating}">
+                  7
+                </span>
+              </div>
+              <div class="recom-slide">
+                <a class="popular-tdy-link" href="#" title="slide"></a>
+                <div class="tdy-slide-img">
+                  <img src="https://kiryuu02.com/wp-content/uploads/2024/11/evolution-begins-with-a-big-tree-004006-0dgMZckc-206x300.jpg" alt="smyh">
+                  <img class="tdy-slide-flag" src="https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manhua.png" alt="china-flag">
+                  <span class="colored">
+                    <i class="fa-solid fa-palette"></i>
+                    COLOR
+                  </span>
+                </div>
+                <span href="${data.url}" class="tdy-slide-title">
+                  Inaho-kun wa Nise Kanojo no Hazu na no ni</span>
+                <p class="tdy-slide-total-chapter">Chapter 4</p> <!--ganti name class jadi latest ch-->
+                <span class="tdy-slide-rating">
+                  <img src="/ratings/rating-45.png" alt="${data.rating}">
+                  7
+                </span>
+              </div>
+              <div class="recom-slide">
+                <a class="popular-tdy-link" href="#" title="slide"></a>
+                <div class="tdy-slide-img">
+                  <img src="https://kiryuu02.com/wp-content/uploads/2024/11/evolution-begins-with-a-big-tree-004006-0dgMZckc-206x300.jpg" alt="smyh">
+                  <img class="tdy-slide-flag" src="https://kiryuu02.com/wp-content/themes/mangareader/assets/images/manhua.png" alt="china-flag">
+                  <span class="colored">
+                    <i class="fa-solid fa-palette"></i>
+                    COLOR
+                  </span>
+                </div>
+                <span href="${data.url}" class="tdy-slide-title">
+                  Inaho-kun wa Nise Kanojo no Hazu na no ni</span>
+                <p class="tdy-slide-total-chapter">Chapter 4</p> <!--ganti name class jadi latest ch-->
+                <span class="tdy-slide-rating">
+                  <img src="/ratings/rating-45.png" alt="${data.rating}">
+                  7
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside id="body-sidebar"> 
+        <section id="last-readed">
+          <h2 class="body-title">Terakhir Dibaca</h2>
+          <div id="last-readed-body"></div>
+        </section>
+        <section id="popular-series">
+          <h2 class="body-title">Serial Populer</h2>
+          <div id="popular-series-body">
+            <div id="time-selection-container">
+              <div class="time-selection time-selection-active">Weekly</div>
+              <div class="time-selection">Monthly</div>
+              <div class="time-selection">All</div>
+            </div>
+            <ul id="popular-series-list" class="sidebar-series-ul"></ul>
+          </div>
+        </section>
+        <section id="join-discord">
+          <h2 class="body-title">Join Discord</h2>
+          <div id="discord-container">
+            <img id="discord-logo" src="/logo/icons8-discord-480.png" alt="discord-logo">
+            <div></div>
+            <h1>Discord</h1>
+          </div>
+        </section>
+        <section id="message-sidebar">
+          <div id="message-container">
+            <ul id="message-list">
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi mina wjojpa oajarpo paopwfpao apwokapofp lore</p></div></li> <!--nanti img tambahin di js-->
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>kopi americano</p></div></li>
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>ayam bakar</p></div></li>
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>mabar mobile legend</p></div></li>
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi min</p></div></li>
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>tolong up manga</p></div></li>
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi mawihih awawaa a awaw in</p></div></li>
+              <li class="message"><span class="message-profile"><img src="" alt=""></span><p class="message-time">21 hours ago</p><div class="message-content"><h5>Name</h5><p>Ngopi mawihih awawaa a awaw in</p></div></li>
+            </ul>
+            <div id="msg-option">
+              <div id="profile">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p id="user-online">1905</p>
+              <i class="fa-solid fa-users-line user-online-btn"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square popup-btn"></i>
+            </div>
+            <div id="msg-input">
+              <div id="msg-input-left">
+                <span id="your-profile"><img src="" alt=""></span>
+                <i id="emoji" class="fa-regular fa-face-smile"></i>
+              </div>
+              <div id="msg-input-center">
+                <input id="your-name" type="text" placeholder="name">
+                <input id="your-msg" type="text" placeholder="message">
+              </div>
+              <div id="msg-input-right">
+                <i id="login" class="fa-solid fa-right-to-bracket"></i>
+                <div id="post-msg"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="new-series">
+          <h1 class="body-title">Serial baru</h1>
+          <ul id="new-series-list" class="sidebar-series-ul"></ul>
+        </section>
+      </aside> <!--KALO UKURANNYA MOBILE TURUNIN ASIDE KE PALING BAWAH-->
+    </div>
+
+    <div id="blog"> <!--RENAME CLASS DESCNYA-->
+      <div class="body-title">
+        Blog
+        <a class="view-all" href="#">VIEW ALL</a>
+      </div>
+      <div id="blog-body"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div id="footer-nav">
+      <a href="#">DMCA</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Ads</a>
+      <a href="#">Status</a>
+    </div>
+    <div id="alphabet-list-head">
+      <strong>A-Z LIST</strong> <p>|</p> Searching series order by alphabet name A to Z.
+    </div>
+    <div id="alphabet-list">
+      <a href="#">#</a>
+      <a href="#">0-9</a>
+      <a href="#">A</a>
+      <a href="#">B</a>
+      <a href="#">C</a>
+      <a href="#">D</a>
+      <a href="#">E</a>
+      <a href="#">F</a>
+      <a href="#">G</a>
+      <a href="#">H</a>
+      <a href="#">I</a>
+      <a href="#">J</a>
+      <a href="#">K</a>
+      <a href="#">L</a>
+      <a href="#">M</a>
+      <a href="#">N</a>
+      <a href="#">O</a>
+      <a href="#">P</a>
+      <a href="#">Q</a>
+      <a href="#">R</a>
+      <a href="#">S</a>
+      <a href="#">T</a>
+      <a href="#">U</a>
+      <a href="#">V</a>
+      <a href="#">W</a>
+      <a href="#">X</a>
+      <a href="#">Y</a>
+      <a href="#">Z</a>      
+    </div>
+    <div id="social-btn">
+      <div id="social-btn-instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+      <div id="social-btn-discord">
+        <i class="fa-brands fa-discord"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/303c5d1757.js" crossorigin="anonymous"></script>
+  <script src="/js/carasole.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/event-listen.js"></script>
+</body>
 </html>
+
+<!-- Lazy load gambar:
+Untuk banyak gambar, tambahkan loading="lazy" agar halaman lebih ringan: -->
