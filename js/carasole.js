@@ -39,7 +39,7 @@ function renderCarasole() {
 
 async function getData() {
   try {
-    let res = await fetch("/data/head/carasole-data.json");
+    let res = await fetch("./data/head/carasole-data.json");
     carasoleData = await res.json();
     console.table(carasoleData);
     renderCarasole();
