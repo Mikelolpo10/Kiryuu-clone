@@ -12,9 +12,9 @@ function renderPopularTdy (data) {
     }
 
     if (data.rating % 1 !== 0 && Number.isInteger(data.rating * 2)) {
-      roundedRating = Math.round(data.rating) * 5;
+      roundedRating = toString(Math.round(data.rating) * 5);
     } else {
-      roundedRating = Math.round(data.rating) * 5;
+      roundedRating = toString(Math.round(data.rating) * 5);
     };
     
     return `            
