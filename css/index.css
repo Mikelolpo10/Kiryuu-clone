@@ -792,6 +792,14 @@ main {
   font-weight: 500;
 }
 
+#disclaimer {
+  padding: 1rem clamp(10px, 26%, 26rem) 0;
+  text-align: center;
+  color: rgb(166, 166, 166);
+  font-size: 13px;
+  font-weight: 500;
+}
+
 @media (max-width: 460px) {
   #body-sidebar {
     display: none;
