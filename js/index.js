@@ -187,10 +187,10 @@ async function latestUpdate () {
 }
 latestUpdate()
 
-fetchAndRender("../data/head/popular-today.json", renderPopularTdy, "popular-tdy-slider")
-fetchAndRender("../data/body/project-update.json", renderProjectUpdate, "project-up-body")
-fetchAndRender("../data/others/blog.json", renderBlog, "blog-body")
+fetchAndRender("./data/head/popular-today.json", renderPopularTdy, "popular-tdy-slider")
+fetchAndRender("./data/body/project-update.json", renderProjectUpdate, "project-up-body")
+fetchAndRender("./data/others/blog.json", renderBlog, "blog-body")
 
 //sidebar
-fetchAndRender("../data/sidebar/popular-weekly.json", renderPopularSeries, "popular-series-list")
-fetchAndRender("../data/sidebar/serial-baru.json", renderNewSeries, "new-series-list")
+fetchAndRender("./data/sidebar/popular-weekly.json", renderPopularSeries, "popular-series-list")
+fetchAndRender("./data/sidebar/serial-baru.json", renderNewSeries, "new-series-list")
