@@ -29,7 +29,7 @@ function renderPopularTdy (data) {
         <span href="${data.url}" class="tdy-slide-title">${data.title}</span>
         <p class="tdy-slide-total-chapter">${data.totalChapter}</p>
         <span class="tdy-slide-rating">
-          <img src="/ratings/rating-${roundedRating}.png" alt="${data.rating}">
+          <img src="./ratings/rating-${roundedRating}.png" alt="${data.rating}">
           ${data.rating}
         </span>
         </div>
